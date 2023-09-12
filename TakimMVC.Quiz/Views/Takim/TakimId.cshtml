@@ -1,0 +1,61 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@using TakimMVC.Quiz.DTO
+@model List<TakimGrupDTO>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Takımdaki Kişi Listesi</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            text-align: center;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Takim ID</th>
+                <th>Takım Adı</th>
+                <th>Kişi isim</th>
+                <th>Kişi Soyisim</th>
+                <th>Unvan</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.TakimID</td>
+                    <td>@item.TakimIsim</td>
+                    <td>@item.Isim</td>
+                    <td>@item.Soyisim</td>
+                    <td>@item.UnvanIsim</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <br />
+</body>
+</html>

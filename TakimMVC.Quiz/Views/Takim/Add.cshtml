@@ -1,0 +1,35 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@using TakimMVC.Quiz.Entities
+@model Kisi
+
+
+<form asp-action="Add" asp-controller="Takim" method="post">
+    <div class="form-group">
+        <label asp-for="Isim" class="control-label"></label>
+        <input asp-for="Isim" class="form-control" />
+        <span asp-validation-for="Isim" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Soyisim" class="control-label"></label>
+        <input asp-for="Soyisim" class="form-control" />
+        <span asp-validation-for="Soyisim" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="UnvanID" class="control-label"></label>
+        <input asp-for="UnvanID" class="form-control" />
+        <span asp-validation-for="UnvanID" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="TakimID" class="control-label"></label>
+        <input asp-for="TakimID" class="form-control" />
+        <span asp-validation-for="TakimID" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Ekle" class="btn btn-primary" />
+    </div>
+</form>

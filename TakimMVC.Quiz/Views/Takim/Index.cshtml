@@ -1,0 +1,59 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@using TakimMVC.Quiz.DTO
+@model List<KisiDTO>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kişi Listesi</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            text-align: center;
+            padding: 8px; 
+        }
+
+        th {
+            background-color: #f2f2f2; 
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Kişi ID</th>
+                <th>Kişi Isim</th>
+                <th>Kişi Soyisim</th>
+                <th>Unvan</th>
+                <th>Takım</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.KisiID</td>
+                    <td>@item.Isim</td>
+                    <td>@item.Soyisim</td>
+                    <td>@item.UnvanIsim</td>
+                    <td>@item.TakimIsim</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <br />
+    <form action="/Takim/Add" method="get">
+        <button type="submit">Yeni Kişi Ekle</button>
+    </form>
+</body>
+</html>
